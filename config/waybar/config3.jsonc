@@ -1,0 +1,41 @@
+// -*- mode: jsonc -*-
+{
+    "name": "bar3",
+    "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 40, // Waybar height (to be removed for auto height)
+    "margin-left": 190,
+
+    // "width": 1280, // Waybar width
+    "spacing": 0, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "custom/applications",
+        "custom/power"
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+        "clock"
+    ],
+    "clock": {
+        // "timezone": "America/New_York",
+        "interval": 1,
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%T}",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+
+
+    "custom/power": {
+        "format":"Power Management", 
+        "on-click": "exec '~/.config/hypr/scripts/powermenu.sh'"
+    },
+
+    "custom/applications": {
+        "format": "Applications",
+        "on-click": "wofi --show drun -I",
+        "tooltip": false
+    }
+}
+

@@ -1,0 +1,106 @@
+// -*- mode: jsonc -*-
+{
+    "name": "bar2",
+    "layer": "top", // Waybar at top layer
+    "position": "left", // Waybar position (top|bottom|left|right)
+    "width": 150, // Waybar height (to be removed for auto height)
+    "margin-top": 46,
+    "margin-bottom": 46,
+    "spacing": 0, // Gaps between modules (4px)
+    // Choose the order of the modules
+
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+
+    
+    "modules-right": [
+        "pulseaudio",
+        "cpu",
+        "memory"
+    ],
+
+    "hyprland/workspaces": {
+       "sort-by-number": true,
+       "format":"{icon}",
+       "on-click": "activate",
+       "format-icons": {
+           "1": "              Internet",
+           "2": "              Terminal",
+           "3": "                System",
+           "4": "            Document",
+           "5": "              Graphics",
+           "6": "                Videos",
+           "7": "                 Games",
+           "8": "                 Music",
+           "9": "                  Work",
+          "10": "                  Logs"
+    },
+
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+   
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": "{icon}"
+        },
+        "on-click": "pavucontrol"
+    }
+  
+}
+

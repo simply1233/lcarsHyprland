@@ -1,0 +1,25 @@
+// -*- mode: jsonc -*-
+{
+    "name": "bar",
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 40, // Waybar height (to be removed for auto height)
+    "margin-left": 190,
+
+    // "width": 1280, // Waybar width
+    "spacing": 6, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/window"
+    ],
+ 
+    "modules-right": [
+        "custom/LCARS"
+    ],
+    
+    "custom/LCARS": {
+        "format": " LCARS ", 
+        "format-alt": " LCARS " 
+    }
+}
+
